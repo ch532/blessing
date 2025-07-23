@@ -1,45 +1,24 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.connectgold.app">
+name: connect_gold
+description: A hybrid app with WebView and Appodeal ads
+publish_to: 'none'
+version: 1.0.0+1
 
-    <!-- Permissions -->
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+environment:
+  sdk: ">=2.19.0 <4.0.0"
 
-    <application
-        android:name="io.flutter.app.FlutterApplication"
-        android:label="Connect Gold"
-        android:icon="@mipmap/ic_launcher"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/LaunchTheme">
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  webview_flutter: ^4.4.1
+  appodeal_flutter: ^1.0.0  # replace with actual version if needed
 
-        <meta-data
-            android:name="flutterEmbedding"
-            android:value="2" />
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
 
-        <!-- Appodeal Initialization -->
-        <meta-data
-            android:name="com.appodeal.appKey"
-            android:value="923bc30ebaca5186de21bbebb9612173a8759ba61bbb4ed0" />
-
-        <!-- Internet for WebView & Ads -->
-        <activity
-            android:name=".MainActivity"
-            android:launchMode="singleTop"
-            android:theme="@style/LaunchTheme"
-            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-            android:hardwareAccelerated="true"
-            android:windowSoftInputMode="adjustResize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-
-    </application>
-
-</manifest>
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
